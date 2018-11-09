@@ -17,7 +17,7 @@ public class GameFrame extends JFrame {
 	private int width, height;
 	
 	public GameFrame(){
-		this.setTitle("Jatekunk");
+		this.setTitle("Jatekunk v1");
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setSize(400, 400);
 		this.setLayout(new BorderLayout());
