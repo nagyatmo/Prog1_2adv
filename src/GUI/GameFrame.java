@@ -19,7 +19,7 @@ public class GameFrame extends JFrame {
 	public GameFrame(){
 		this.setTitle("Jatekunk");
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		this.setSize(400, 400);
+		this.setSize(500, 500);
 		this.setLayout(new BorderLayout());
 		this.add(addGamePanel(),BorderLayout.NORTH);
 		this.repaint();
