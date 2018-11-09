@@ -1,0 +1,3 @@
+-képek beolvasása
+-mozgás megvalósítása
+-jpanel addinventorypanel gridlayout
