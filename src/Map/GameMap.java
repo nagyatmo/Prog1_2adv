@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
+import Player.Item;
 import Player.Pirate;
 
 public class GameMap {
@@ -16,9 +17,11 @@ public class GameMap {
 	private int[] xDir = {-1,1,-1,1,0,1,0,-1};
 	private int[] yDir = {-1,-1,1,1,-1,0,1,0};
 	public Pirate player;
+	private int lastfield;
 	
 	public GameMap(){
 		readMap("lvl1.txt");
+		lastfield = -11;
 		discover();
 		drawMap();
 	}
@@ -42,6 +45,8 @@ public class GameMap {
 					map[row][i] = act;
 					if(act == -5){ //-5 = player
 						player = new Pirate(row, i, 100, 250);
+						Item it = new Item(10, "szöveg", 10);
+						player.inventory.add(it);
 						
 					//	this.robot.setLocation(row, i);
 					}
@@ -82,6 +87,35 @@ public class GameMap {
 			}
 			System.out.println();
 		}
+	}
+	
+	public void doStep(String direction){
+		if(direction.equals("up")){
+			if(player.x>0){
+				fieldChecker(player.x-1, player.y);
+			}
+		}
+		
+	}
+	
+	private void fieldChecker(int x, int y){
+		int a = map[x][y];
+		if(player.energy<=0){
+			return;
+		}
+		if(map[x][y]==-1){
+			return;
+		}else if(a==-2){
+			player.energy-=1;
+		}else if(a==-4){
+			player.energy-=1.8;
+		}
+		map[player.x][player.y]=lastfield;
+		lastfield=map[x][y];
+		map[x][y]=-5;
+		player.x=x;
+		player.y=y;
+		discover();
 	}
 
 }
