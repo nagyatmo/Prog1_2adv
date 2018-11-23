@@ -95,6 +95,21 @@ public class GameMap {
 				fieldChecker(player.x-1, player.y);
 			}
 		}
+		if(direction.equals("left")){
+			if(player.y>0){
+				fieldChecker(player.x, player.y-1);
+			}
+		}
+		if(direction.equals("right")){
+			if(player.y<width){
+				fieldChecker(player.x, player.y+1);
+			}
+		}
+		if(direction.equals("down")){
+			if(player.x<height){
+				fieldChecker(player.x+1, player.y);
+			}
+		}
 		
 	}
 	
@@ -107,6 +122,18 @@ public class GameMap {
 			return;
 		}else if(a==-2){
 			player.energy-=1;
+		}else if(a==-4){
+			player.energy-=1.8;
+		}else if(a==-3){
+			player.energy-=1.4;
+		}else if(a==-14){
+			return;
+		}else if(a==-4){
+			player.energy-=1.8;
+		}else if(a==-4){
+			player.energy-=1.8;
+		}else if(a==-4){
+			player.energy-=1.8;
 		}else if(a==-4){
 			player.energy-=1.8;
 		}

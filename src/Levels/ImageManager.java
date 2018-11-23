@@ -78,6 +78,8 @@ public class ImageManager {
 			return mountain;
 		}else if(n==-13){
 			return jungle;
+		}else if(n==-14){
+			return rock;
 		}
 		return unknown;
 		

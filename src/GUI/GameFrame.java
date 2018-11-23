@@ -27,11 +27,11 @@ public class GameFrame extends JFrame implements ActionListener {
 	private JLabel money;
 	
 	public GameFrame(){
-		this.setTitle("Jatekunk v1");
+		this.setTitle("Tilegame");
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setLayout(new BorderLayout());
 		this.add(addGamePanel(),BorderLayout.NORTH);
-		this.setSize(50*width,50*height+100);
+		this.setSize(50*width,50*height+150);
 		this.add(addButtonPanel(),BorderLayout.CENTER);
 		this.add(addInventoryPanel(),BorderLayout.SOUTH);
 		this.add(addStatusPanel(),BorderLayout.EAST);
@@ -69,9 +69,9 @@ public class GameFrame extends JFrame implements ActionListener {
 		down.addActionListener(this);
 		left.addActionListener(this);
 		right.addActionListener(this);
+		j.add(left);
 		j.add(up);
 		j.add(down);
-		j.add(left);
 		j.add(right);
 		
 		return j;
